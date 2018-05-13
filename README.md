@@ -4,7 +4,11 @@ The Makefile with some helpers for laradock
 
 ## Installation
 
-Just copy the `Makefile` from this repo to your project root
+Just copy the `Makefile` from this repo to your project root.
+
+You can do this with:
+
+`wget https://raw.githubusercontent.com/KryDos/laradock-helper/master/Makefile`
 
 ## Available targets
 
