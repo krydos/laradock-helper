@@ -36,6 +36,7 @@ install-laradock:
 	git clone $(LARADOCK_REPO) $(LARADOCK) && \
 	cp $(LARADOCK)/env-example $(LARADOCK)/.env && \
 	sed -i "/PHP_FPM_INSTALL_PGSQL=false/c\PHP_FPM_INSTALL_PGSQL=true" $(LARADOCK)/.env && \
+	sed -i "/DATA_PATH_HOST=.*/c\DATA_PATH_HOST=..\/docker-data" $(LARADOCK)/.env && \
 	sed -i "/NGINX_HOST_HTTP_PORT=80/c\NGINX_HOST_HTTP_PORT=$(LARADOCK_NGINX_PORT)" $(LARADOCK)/.env && \
 	(test -s .env || cp .env.example .env) ; \
 	sed -i "/DB_CONNECTION=.*/c\DB_CONNECTION=pgsql" .env && \
